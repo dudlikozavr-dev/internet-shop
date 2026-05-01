@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #FAF6F0;
+  --color-dark: #2B2724;
+  --color-accent: #C98A8A;
+  --color-sale: #B5453B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .text-hero {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.05;
+  }
+
+  .text-display {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .sale-badge {
+    @apply bg-sale text-white text-xs font-bold px-2 py-1 rounded-sm font-inter tracking-wide;
+  }
+
+  .btn-primary {
+    @apply bg-dark text-cream font-inter font-semibold text-sm tracking-wide px-8 py-4 rounded-sm
+           transition-all duration-200 hover:bg-[#1a1614] active:scale-[0.98] cursor-pointer;
+  }
+
+  .btn-sale {
+    @apply bg-sale text-white font-inter font-semibold text-sm tracking-wide px-8 py-4 rounded-sm
+           transition-all duration-200 hover:bg-[#9e3b32] active:scale-[0.98] cursor-pointer;
+  }
+}
